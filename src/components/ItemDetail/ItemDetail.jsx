@@ -3,10 +3,13 @@ import ItemCount from '../ItemCount/ItemCount'
 import './ItemDetail.css'
 
 const ItemDetail = ({id, title, thumbnail, description, category, price, stock}) => {
+
+  const pathThumbnail = '../../'+thumbnail
+
   return (
     <div class="ItemDetail">
         <h2>{title}</h2>
-        <img src={thumbnail} />
+        <img src={pathThumbnail} />
         <p>Descripción: {description}</p>
         <p>Categoría: {category}</p>
         <h4 className='lblPrice'>${price}</h4>

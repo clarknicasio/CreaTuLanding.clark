@@ -1,6 +1,7 @@
 import React from 'react'
-import { FlexboxGrid, Button } from 'rsuite'
+import { FlexboxGrid } from 'rsuite'
 import './Item.css'
+import { Link } from 'react-router-dom'
 
 const Item = ({producto}) => {
 
@@ -13,7 +14,7 @@ const Item = ({producto}) => {
         <h5>{title}</h5>
         <h3 className='lblPrice'>${price}</h3>
         <p>{stock} unidades disponibles</p>
-        <Button>Ver más</Button>
+        <Link to={`/item/${id}`} >Ver más</Link>
 
     </FlexboxGrid.Item>
   )
