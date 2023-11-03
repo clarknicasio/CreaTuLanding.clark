@@ -7,11 +7,10 @@ import { useParams } from 'react-router-dom'
 
 const ListItemContainer = ({title}) => {
 
-  const [data, setData] = useState([]); // Declarar una variable de estado
+  const [data, setData] = useState([]); 
 
   const { categoryId } = useParams()
 
-  // uso useEffect para que el llamado solo se efectue en el montaje (una vez)
   useEffect(() => {    
 
     const asyncFunction = categoryId ? getProductsByCategory : obtenerProductos
@@ -24,11 +23,6 @@ const ListItemContainer = ({title}) => {
         console.error(error)
       })
 
-    /*obtenerProductos().then( datos => {
-      console.log(datos)
-      setData(datos);
-    } )*/
-
   }, [categoryId])
 
 
@@ -38,7 +32,7 @@ const ListItemContainer = ({title}) => {
     <Container>
 
       <Header>
-        <h1 style={{ marginTop: '50px', marginBottom: '30px' }}>{title}</h1>
+        <h1 style={{ marginTop: '50px', marginBottom: '30px' }}>{categoryId ? categoryId : title }</h1>
       </Header>
 
       <Content>

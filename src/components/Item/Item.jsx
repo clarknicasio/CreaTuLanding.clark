@@ -14,7 +14,7 @@ const Item = ({producto}) => {
         <h5>{title}</h5>
         <h3 className='lblPrice'>${price}</h3>
         <p>{stock} unidades disponibles</p>
-        <Link to={`/item/${id}`} >Ver más</Link>
+        <Link className='rs-btn' to={`/item/${id}`} >Ver más</Link>
 
     </FlexboxGrid.Item>
   )

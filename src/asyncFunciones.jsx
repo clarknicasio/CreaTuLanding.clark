@@ -85,6 +85,7 @@ const productos = [
 
 ];
 
+
 export const obtenerProductos = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -93,61 +94,25 @@ export const obtenerProductos = () => {
   });
 }
 
-/*const obtenerProductos = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(productos);
-      }, 2000)
-    });
-    }*/
 
-  
-  
-  /*export const obtenerProductos = () => {
-    return new Promise((resolve, reject) => {
-      setTimeout(() => {
-        fetch('https://dummyjson.com/products')
-          .then(response => {
-            if (!response.ok) {
-              reject('No se pudo obtener la lista de productos');
-            }
-            return response.json();
-          })
-          .then(data => {
-            const productos = data.products;
-            if (!productos) {
-              reject('La respuesta no contiene una lista de productos válida');
-            } else {
-              resolve(productos);
-            }
-          })
-          .catch(error => {
-            reject(error);
-          });
-      }, 1000);
-    });
-  };*/
+export const getProductById = (productId) => {
 
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(productos.find(prod => prod.id === productId))
+    },500)
 
-  export const getProductById = (productId) => {
+  })
 
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        resolve(productos.find(prod => prod.id === productId))
-      },500)
+}
 
-    })
+export const getProductsByCategory = (categoryId) => {
 
-  }
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve(productos.filter(prod => prod.category === categoryId));
+    },500)
 
-  export const getProductsByCategory = (categoryId) => {
-  
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        /*resolve(productos.find(prod => prod.category === categoryId))*/
-        resolve(productos.filter(prod => prod.category === categoryId));
-      },500)
+  })
 
-    })
-
-  }  
+}  

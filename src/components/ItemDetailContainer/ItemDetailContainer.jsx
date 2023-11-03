@@ -1,4 +1,3 @@
-//import React from 'react'
 import './ItemDetailContainer.css'
 import { useState, useEffect } from 'react'
 import { getProductById } from '../../asyncFunciones'
@@ -12,10 +11,7 @@ const ItemDetailContainer = () => {
   const { itemId } = useParams()
 
   useEffect(() => {
-
-    //obtenerProductos() /*creo q no hace falta */
     
-    //getProductById('1')
     getProductById(itemId)
     .then(response => {
       setProduct(response)
