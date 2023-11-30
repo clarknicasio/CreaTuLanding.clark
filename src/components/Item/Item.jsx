@@ -11,8 +11,8 @@ const Item = ({producto}) => {
 
     <FlexboxGrid.Item colspan={7}>
         <img src={thumbnail} />
-        <h5>{title}</h5>
-        <h3 className='lblPrice'>${price}</h3>
+        <h3>{title}</h3>
+        <h2 className='lblPrice'>${price}</h2>
         <p>{stock} unidades disponibles</p>
         <Link className='rs-btn' to={`/item/${id}`} >Ver más</Link>
 

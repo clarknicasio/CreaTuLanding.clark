@@ -86,16 +86,16 @@ const productos = [
 ];
 
 
-export const obtenerProductos = () => {
+/*export const obtenerProductos = () => {
   return new Promise((resolve) => {
     setTimeout(() => {
       resolve(productos);
     }, 500)
   });
 }
+*/
 
-
-export const getProductById = (productId) => {
+/*export const getProductById = (productId) => {
 
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -115,4 +115,4 @@ export const getProductsByCategory = (categoryId) => {
 
   })
 
-}  
+}  */

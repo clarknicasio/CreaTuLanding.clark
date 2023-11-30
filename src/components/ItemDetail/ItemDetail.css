@@ -1,10 +1,9 @@
+.ItemDetail {
+    margin-top: 50px;
+}
+
 .ItemDetail img {
     margin-top: 10px;
     margin-bottom: 20px;
     height: 250px;
 }
-
-.ItemDetail a.rs-btn {
-    margin-top:20px;
-}
-

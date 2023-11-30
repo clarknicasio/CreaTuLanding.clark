@@ -1,26 +1,42 @@
 import './ItemDetailContainer.css'
 import { useState, useEffect } from 'react'
-import { getProductById } from '../../asyncFunciones'
+import { getFirestore, doc, getDoc, collection, query, where, getDocs } from 'firebase/firestore'
+import { appFirestore } from '../../main.jsx'
+//import { getProductById } from '../../asyncFunciones'
 import ItemDetail from '../ItemDetail/ItemDetail.jsx'
 import { useParams } from 'react-router-dom' 
 
 const ItemDetailContainer = () => {
 
   const [product, setProduct] = useState(null)
-
   const { itemId } = useParams()
 
+  
   useEffect(() => {
-    
-    getProductById(itemId)
-    .then(response => {
-      setProduct(response)
-    })
-    .catch(error => {
-      console.error(error)
-    })
+    const db = getFirestore(appFirestore);
+    //const itemRef = doc(db, 'items', itemId);
+    const queryRef = collection(db, 'items');
+    const querySnapshot = query(queryRef, where('id', '==', itemId));
 
+    //getDoc(itemRef)
+    getDocs(querySnapshot)
+  .then((snapshot) => {
+    if (snapshot.size > 0) {
+      snapshot.forEach((doc) => {
+        const productData = { id: doc.id, ...doc.data() };
+        setProduct(productData);
+        console.log(productData);
+      });
+    } else {
+      console.log('Item no encontrado...');
+    }
+  })
+  .catch((error) => {
+    console.error('Error al obtener el producto:', error);
+    // Manejar el error apropiadamente
+  });
   }, [itemId])
+  
   
   return (
     <div>

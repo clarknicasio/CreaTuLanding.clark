@@ -17,12 +17,12 @@
     margin-bottom: 10px;
 }
 
-.rs-flex-box-grid-item Button {
-    margin-top: 10px;
+.rs-flex-box-grid a.rs-btn {
+    margin-top: 12px !important;
 }
 
 .lblPrice {
-    margin-top:10px;
+    margin-top:8px;
     margin-bottom:10px;
 }
 

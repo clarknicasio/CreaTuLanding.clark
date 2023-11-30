@@ -1,0 +1,7 @@
+.rs-navbar-default {
+    z-index: 9999;
+}
+
+.rs-navbar-default a.rs-navbar-brand a h3 {
+    line-height: 26px;
+}

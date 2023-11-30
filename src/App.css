@@ -1,8 +1,17 @@
+/*@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');*/
+@import url('https://fonts.googleapis.com/css2?family=Rajdhani:wght@300;400;500;600&display=swap');
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+}
+
+body {
+  /*font-family: 'Share Tech', sans-serif !important; */
+  font-family: 'Rajdhani', sans-serif !important;
+  font-size: 15px !important;
 }
 
 .logo {
@@ -43,4 +52,23 @@
 
 .rs-btn {
   border: 1px solid #999 !important;
+  margin:2px !important;
+  font-weight: 600 !important;
+  font-size: 1.1em !important;
 }
+
+/* Media query para dispositivos móviles */
+@media (max-width: 768px) {
+  .hideMobile {
+    display: none; 
+  }
+
+  .rs-navbar-brand {
+    text-align: center; 
+    width: 100%; 
+  }
+  .rs-navbar-brand h3 {
+    margin: 0; 
+  }  
+}
+

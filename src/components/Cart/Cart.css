@@ -1,0 +1,16 @@
+table thead tr th, table tbody tr td {
+    padding: 10px;
+    border: 1px solid #cccccc;
+}
+table {
+    margin-bottom:20px;
+}
+.lblTotals {
+    font-weight: 600;
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+.rs-btn {
+    margin:2px;
+}
