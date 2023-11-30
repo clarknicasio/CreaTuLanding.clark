@@ -59,8 +59,13 @@ body {
 
 /* Media query para dispositivos móviles */
 @media (max-width: 768px) {
+
+  .pageTitle {
+    margin-top: 100px !important;
+  }
+
   .hideMobile {
-    display: none; 
+    display: none !important; 
   }
 
   .rs-navbar-brand {
@@ -70,5 +75,9 @@ body {
   .rs-navbar-brand h3 {
     margin: 0; 
   }  
+
+  .rs-flex-box-grid-item {
+    width: 100% !important;
+  }
 }
 

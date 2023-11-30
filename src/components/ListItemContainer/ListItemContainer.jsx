@@ -72,7 +72,7 @@ const ListItemContainer = ({title}) => {
     <Container>
 
       <Header>
-        <h1 style={{ marginTop: '50px', marginBottom: '30px' }}>{categoryId ? categoryId : title }</h1>
+        <h1 className="pageTitle" style={{ marginTop: '50px', marginBottom: '30px' }}>{categoryId ? categoryId : title }</h1>
       </Header>
 
       <Content>

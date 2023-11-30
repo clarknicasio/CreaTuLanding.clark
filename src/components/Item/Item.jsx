@@ -5,8 +5,8 @@ import { Link } from 'react-router-dom'
 
 const Item = ({producto}) => {
 
-    const {id, thumbnail, title, stock, price} = producto;
-
+  const {id, thumbnail, title, stock, price} = producto;
+    
   return (
 
     <FlexboxGrid.Item colspan={7}>
