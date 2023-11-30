@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 
 const Item = ({producto}) => {
 
-    const {id, thumbnail, title, stock, description, price} = producto;
+    const {id, thumbnail, title, stock, price} = producto;
 
   return (
 

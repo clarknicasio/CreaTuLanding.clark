@@ -19,7 +19,8 @@ const ItemDetail = ({id, title, thumbnail, description, category, price, stock})
     setQtyAdded(quantity)
   }
 
-  const pathThumbnail = '../../'+thumbnail
+  //const pathThumbnail = '../../'+thumbnail
+  const pathThumbnail = thumbnail
 
   return (
     <div class="ItemDetail">
