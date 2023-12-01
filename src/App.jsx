@@ -7,6 +7,7 @@ import ListItemContainer from './components/ListItemContainer/ListItemContainer'
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer'
 import Loader from './components/Loader/Loader'
 import Cart from './components/Cart/Cart'
+import Checkout from './components/Checkout/Checkout'
 import 'rsuite/dist/rsuite.min.css'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { appFirestore } from './main'
@@ -67,6 +68,7 @@ function App() {
             <Route path='/category/:categoryId' element={<ListItemContainer/>}/>
             <Route path='/item/:itemId' element={<ItemDetailContainer/>}/>
             <Route path='/cart' element={<Cart/>}/>
+            <Route path='/checkout' element={<Checkout/>}/>
             <Route path="*" element={<h4>404 - PAGINA NO ENCONTRADA</h4>} />
             </Routes>
           }
