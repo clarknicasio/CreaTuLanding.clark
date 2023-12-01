@@ -14,6 +14,14 @@ body {
   font-size: 15px !important;
 }
 
+.mBottom10 {
+  margin-bottom: 10px !important;
+}
+
+.mBottom20 {
+  margin-bottom: 20px !important;
+}
+
 .logo {
   height: 6em;
   padding: 1.5em;
