@@ -17,28 +17,28 @@ const Checkout = () => {
     telefono: "",
     email: "",
     domicilio: "",
-  });
+  })
 
   const handleOnChange = (event) => {
-    const { name, value } = event.target;
-    setInputValues({ ...inputValues, [name]: value });
-  };
+    const { name, value } = event.target
+    setInputValues({ ...inputValues, [name]: value })
+  }
 
   const saveOrder = (e) => {
-    console.log('Guardo orden de compra en DB');
-    e.preventDefault();
-    const db = getFirestore();
-    const collectionRef = collection(db,'orders');
+    console.log('Guardo orden de compra en DB')
+    e.preventDefault()
+    const db = getFirestore()
+    const collectionRef = collection(db,'orders')
     addDoc(collectionRef, {
       items: cartList,
       fecha: serverTimestamp(),
       total: totalOrder(),
       cliente:{ ...inputValues },
     }).then((resultado) => {
-      setPorder(resultado.id);        
-      removeList();
-    });
-  };
+      setPorder(resultado.id)       
+      removeList()
+    })
+  }
 
 
   if (porder) {  

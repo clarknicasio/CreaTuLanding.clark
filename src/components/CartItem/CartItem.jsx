@@ -1,18 +1,13 @@
 import React, { useContext } from "react";
 import "./CartItem.css";
 import { CartContext } from '../context/CartContext'
-import TrashIcon from '@rsuite/icons/Trash';
-//import { ProductsContext } from "../../Contexts/ProductsContext";
+import TrashIcon from '@rsuite/icons/Trash'
 
 const CartItem = ({item}) => {
 
     const subTotal = parseFloat(item.price) * parseFloat(item.quantity)
 
-    //const { addItemCart } = useContext(CartContext); 
-    const { deleteItem } = useContext(CartContext); 
-
-    //const { product } = useContext(ProductsContext);
-    //const item = product.find( item => item.id === props.item.id);
+    const { deleteItem } = useContext(CartContext)
 
     return(
         <>

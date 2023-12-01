@@ -36,7 +36,7 @@ const Cart = () => {
                 <hr/>
                 <Button className='rs-btn' onClick={removeList}>Vaciar carrito</Button>
                 <Link className='rs-btn' to='/' >Seguir comprando</Link>
-                <Link className='rs-btn' to='/finalizarcompra' >Finalizar compra</Link>
+                <Link className='rs-btn' to='/checkout' >Finalizar compra</Link>
                 </div>
             ) : (
                 <div>

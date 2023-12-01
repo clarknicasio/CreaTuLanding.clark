@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom'
 
 const CartWidget = () => {
 
-	const {totalQty} = useContext(CartContext);
+	const {totalQty} = useContext(CartContext)
   
   return totalQty > 0 && (
     <Nav.Item icon={<CartIcon />}>

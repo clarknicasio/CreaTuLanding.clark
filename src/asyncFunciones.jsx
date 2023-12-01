@@ -1,4 +1,4 @@
-const productos = [
+/*const productos = [
   {
     id: '1',
     title: 'Samsung Galaxy A24',
@@ -84,7 +84,7 @@ const productos = [
   },
 
 ];
-
+*/
 
 /*export const obtenerProductos = () => {
   return new Promise((resolve) => {

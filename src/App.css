@@ -14,6 +14,10 @@ body {
   font-size: 15px !important;
 }
 
+table {
+  width: 100%;
+}
+
 .mBottom10 {
   margin-bottom: 10px !important;
 }
@@ -87,5 +91,16 @@ body {
   .rs-flex-box-grid-item {
     width: 100% !important;
   }
+
+  table {
+    overflow-x: auto;
+    display: block;
+  }
+  .rs-btn {
+    display: block !important;
+    margin-bottom: 10px !important;
+    width: 100%;
+  }
+
 }
 
