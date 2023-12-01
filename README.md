@@ -1,13 +1,38 @@
 # Descripcion del proyecto
 Web App E-commerce. 
-Tienda online desarrollada en React JS para el curso de CoderHouse
+Tienda online desarrollada en React JS.
 
-# Herramientas utilizadas
-Javascript, React JS, React Suite, Vite
+## Herramientas y tecnologías utilizadas
+ * Vite
+ * React JS
+ * React Suite
+ * Firebase
 
-# Comandos para poder ejecutar la aplicacion
+## Temas principales vistos en el proyecto
+ * Componentes
+ * Hooks
+ * Routing
+ * Context
+ * Renderizado condicional
+ * Conexión a Firebase
+ * Deploy en Netify
 
-# React + Vite
+## Componentes principales del proyecto
+ * Menú
+ * Loader
+ * Catálogo principal
+ * Navegación por categorías
+ * Detalle del producto
+ * Widget carrito
+ * Carrito
+ * Checkout / Orden de compra
+
+## Para poder ejecutar la aplicacion
+1. Clonar el repositorio de Github
+2. Correr el comando npm install
+3. Correr el comando npm run dev
+
+## React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
