@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react"
-import { addDoc, collection, getFirestore, serverTimestamp } from "firebase/firestore"
+import { addDoc, collection, getFirestore, serverTimestamp, doc, updateDoc, getDoc } from "firebase/firestore"
 import { CartContext } from '../context/CartContext'
 import { Container, Content } from 'rsuite'
 import { Link } from 'react-router-dom'
@@ -7,10 +7,7 @@ import "./Checkout.css"
 
 
 const Checkout = () => {
-  const { cartList } = useContext(CartContext)
-  const { removeList } = useContext(CartContext)
-  const { totalOrder } = useContext(CartContext)
-
+  const { cartList, removeList, totalOrder } = useContext(CartContext)
   const [porder, setPorder] = useState("");
   const [inputValues, setInputValues] = useState({
     nombre: "",
@@ -29,15 +26,44 @@ const Checkout = () => {
     e.preventDefault()
     const db = getFirestore()
     const collectionRef = collection(db,'orders')
+    const itemsCollection = collection(db, 'items');
+
+
     addDoc(collectionRef, {
       items: cartList,
       fecha: serverTimestamp(),
       total: totalOrder(),
       cliente:{ ...inputValues },
-    }).then((resultado) => {
-      setPorder(resultado.id)       
-      removeList()
     })
+    
+    .then((resultado) => {
+      setPorder(resultado.id)
+      
+      return Promise.all(
+        cartList.map((product) => {
+          const itemRef = doc(itemsCollection, product.id)
+          return getDoc(itemRef).then((itemDoc) => {
+            if (itemDoc.exists()) {
+              const currentItem = itemDoc.data()
+              const updatedStock = currentItem.stock - product.quantity
+              return updateDoc(itemRef, { stock: updatedStock })
+            } else {
+              console.error('El producto no existe.')
+              return null
+            }
+          })
+        })
+      )
+ 
+    })
+
+    .then(() => {
+      removeList();
+    })
+    .catch((error) => {
+      console.error('Error al guardar la orden:', error);
+    });
+
   }
 
 

@@ -24,7 +24,7 @@ const Cart = () => {
             <h2>Su carrito</h2>
             {productsCart.length > 0 ? (
                 <div>
-                <table className>
+                <table>
                     <thead>
                         <tr><th>Producto</th><th>Precio</th><th>Cant.</th><th>Subt.</th><th></th></tr>
                     </thead>
